@@ -4,39 +4,38 @@ import javax.persistence.*;
 
 @Entity
 public class Cab {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int perKmRate;
-    private boolean available;
+    private Integer Id;
+    private Integer perKmRate;
+    private Boolean available;
+
     @OneToOne
     @JoinColumn
     Driver driver;
 
-    public Cab() {
+    public Integer getId() {
+        return Id;
     }
 
-    public int getId() {
-        return id;
+    public void setId(Integer id) {
+        Id = id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getPerKmRate() {
+    public Integer getPerKmRate() {
         return perKmRate;
     }
 
-    public void setPerKmRate(int perKmRate) {
+    public void setPerKmRate(Integer perKmRate) {
         this.perKmRate = perKmRate;
     }
 
-    public boolean isAvailable() {
+    public Boolean getAvailable() {
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 
